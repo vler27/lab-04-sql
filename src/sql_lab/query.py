@@ -1,5 +1,3 @@
-"""Query data from the mock MySQL table."""
-
 import logging
 import os
 
@@ -65,7 +63,6 @@ def get_data_by_group(value):
 
 
 def plot_counts(groupby):
-    """Return counts of rows grouped by the requested column."""
     logging.info("Counting rows grouped by %s", groupby)
 
     if groupby not in VALID_COLUMNS:
@@ -119,7 +116,6 @@ def plot_counts(groupby):
 
 
 def main():
-    """Demonstrate the database query functions."""
     group_rows = get_data_by_group("ewqw")
 
     print("\nRows where group = 'ewqw':")
@@ -134,4 +130,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

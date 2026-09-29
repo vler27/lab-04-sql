@@ -1,6 +1,3 @@
-
-"""Read, clean, and upload Mockaroo CSV data to MySQL."""
-
 import logging
 import os
 
@@ -8,11 +5,11 @@ import mysql.connector
 import pandas as pd
 
 
+# Set up logging so we can see what the program is doing.
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
-
 
 DBHOST = os.environ["DBHOST"]
 DBUSER = os.environ["DBUSER"]
@@ -21,7 +18,6 @@ DBNAME = os.environ["DBNAME"]
 
 
 def read_data(filename):
-    """Read the CSV file into a pandas DataFrame."""
     logging.info("Reading data from %s", filename)
 
     data = pd.read_csv(filename)
@@ -36,7 +32,6 @@ def read_data(filename):
 
 
 def clean_data(data):
-    """Remove rows with missing values from the DataFrame."""
     logging.info("Cleaning data")
 
     cleaned_data = data.dropna()
@@ -50,7 +45,6 @@ def clean_data(data):
 
 
 def load_data(data, table):
-    """Create the MySQL table if needed and upload the DataFrame."""
     logging.info("Loading data into table %s", table)
 
     connection = None
@@ -107,7 +101,6 @@ def load_data(data, table):
 
 
 def main():
-    """Read, clean, and upload the Mockaroo CSV data."""
     logging.info("Starting data processing")
 
     data = read_data("MOCK_DATA.csv")
