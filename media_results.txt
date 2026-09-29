@@ -1,0 +1,6 @@
+username	email	content
+alice	alice@example.com	Hello everyone!
+bob	bob@example.com	I am learning how to use SQL databases.
+charlie	charlie@example.com	Data science is really interesting.
+diana	diana@example.com	I had a great day at college today.
+ethan	ethan@example.com	Python is one of my favorite programming languages.
